@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("/src/font/Poppins-Regular.ttf") format("ttf"),
+    url("/src/font/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #0000000a;
+}
+
+.min-height-full {
+  min-height: 100vh;
+  width: 100%;
+}
+.font-sm {
+  font-size: 13px;
+}
+.mr-3{
+  margin-right: 10px;
+}
+.text-dange{
+  color:red;
+}

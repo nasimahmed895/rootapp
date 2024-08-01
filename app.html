@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ROOT APP</title>
+  <link href="./src/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="./src/style.css" rel="stylesheet" />
+
+  <!-- api json data -->
+  <script>
+    // Active
+    // InActive
+    // JSON data
+    const jsonData = {
+      android: {
+        football: [
+          {
+            id: 1,
+            appName: "9Goal Football",
+            status: "Active",
+            appLink:
+              "https://play.google.com/store/apps/details?id=com.ninegoal.app",
+          },
+          {
+            id: 2,
+            appName: "Hesgoal",
+            status: "Active",
+            appLink:
+              "https://play.google.com/store/apps/details?id=com.hesgoal.footballtv",
+          },
+          {
+            id: 3,
+            appName: "CNF Sports Pro",
+            status: "Active",
+            appLink:
+              "https://play.google.com/store/apps/details?id=net.tiksports.football",
+          },
+          {
+            id: 4,
+            appName: "Livefooty - Live Football TV",
+            status: "Active",
+            appLink:
+              "https://play.google.com/store/apps/details?id=com.livefooty.football",
+          },
+          {
+            id: 5,
+            appName: "Bingsportz Football",
+            status: "Active",
+            appLink:
+              "https://play.google.com/store/apps/details?id=com.bingsportz.app",
+          },
+        ],
+        cricket: [
+          {
+            id: 1,
+            appName: "Smartcric - Live Cricket",
+            status: "Active",
+            appLink:
+              "https://play.google.com/store/apps/details?id=com.cricrockerpro.app",
+          },
+        ],
+      },
+      ios: {
+        football: [
+          {
+            id: 1,
+            appName: "EMZ Sport",
+            status: "Active",
+            appLink:
+              "https://apps.apple.com/us/app/emz-sport/id6479907890",
+          },
+          {
+            id: 2,
+            appName: "Hola Football",
+            status: "Active",
+            appLink:
+              "https://apps.apple.com/us/app/hola-football/id6480413934",
+          },
+          {
+            id: 3,
+            appName: "Sega Football",
+            status: "Active",
+            appLink:
+              "https://apps.apple.com/us/app/sega-football/id6480421175",
+          },
+          {
+            id: 4,
+            appName: "9Goal Football",
+            status: "Active",
+            appLink:
+              "https://apps.apple.com/us/app/9goal-football/id6480588141",
+          },
+          {
+            id: 5,
+            appName: "Bingsportz Football",
+            status: "Active",
+            appLink:
+              "https://apps.apple.com/us/app/bingsportz-football/id6503285743",
+          },
+        ],
+        cricket: [
+          {
+            id: 1,
+            appName: "StarCric",
+            status: "Active",
+            appLink:
+              "https://apps.apple.com/us/app/starcric/id6479562162",
+          },
+        ],
+      },
+    };
+  </script>
+  <!-- api json data end -->
+</head>
+
+<body style="background-color: #0000000a">
+  <main class="container min-height min-height-full">
+    <section>
+      <h1 class="text-center pt-3">APP SYSTEM!</h1>
+      <br />
+    </section>
+    <section>
+      <div class="card" style="width: 100%">
+        <div class="card-body">
+          <div class="d-flex justify-content-center">
+            <ul class="nav nav-pills mb-5 text-center" id="category-tab" role="tablist" style="width: fit-content">
+
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active border mr-3" id="pills-ios-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-ios" type="button" role="tab" aria-controls="pills-ios" aria-selected="false"
+                  style="width: 100px">
+                  iOS
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link  border me-2" id="pills-android-tab" data-bs-toggle="pill"
+                  data-bs-target="#pills-android" type="button" role="tab" aria-controls="pills-android"
+                  aria-selected="true" style="width: 100px">
+                  Android
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-content" id="category-tabContent">
+            <div class="tab-pane fade " id="pills-android" role="tabpanel"
+              aria-labelledby="pills-android-tab">
+              <ul class="nav nav-pills text-center" id="platform-tab" role="tablist"
+                style="width: fit-content; margin-bottom: 40px">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active border me-2" id="pills-android-football-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-android-football" type="button" role="tab"
+                    aria-controls="pills-android-football" aria-selected="true" style="padding: 8px 22px">
+                    Football
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link border" id="pills-android-cricket-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-android-cricket" type="button" role="tab"
+                    aria-controls="pills-android-cricket" aria-selected="false" style="padding: 8px 22px">
+                    Cricket
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content mt-4" id="platform-tabContent">
+                <div class="tab-pane fade show active" id="pills-android-football" role="tabpanel"
+                  aria-labelledby="pills-android-football-tab">
+                  <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-4" id="androidFootballCardsContainer">
+                    <!-- Android Football cards will be inserted here -->
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="pills-android-cricket" role="tabpanel"
+                  aria-labelledby="pills-android-cricket-tab">
+                  <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-4" id="androidCricketCardsContainer">
+                    <!-- Android Cricket cards will be inserted here -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade show active" id="pills-ios" role="tabpanel" aria-labelledby="pills-ios-tab">
+              <ul class="nav nav-pills text-center" id="platform-tab-ios" role="tablist"
+                style="width: fit-content; margin-bottom: 40px">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active border me-2" id="pills-ios-football-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-ios-football" type="button" role="tab" aria-controls="pills-ios-football"
+                    aria-selected="true" style="padding: 8px 22px">
+                    Football
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link border" id="pills-ios-cricket-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-ios-cricket" type="button" role="tab" aria-controls="pills-ios-cricket"
+                    aria-selected="false" style="padding: 8px 22px">
+                    Cricket
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content pt-2" id="platform-tabContent-ios">
+                <div class="tab-pane fade show active" id="pills-ios-football" role="tabpanel"
+                  aria-labelledby="pills-ios-football-tab">
+                  <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-4" id="iosFootballCardsContainer">
+                    <!-- iOS Football cards will be inserted here -->
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="pills-ios-cricket" role="tabpanel"
+                  aria-labelledby="pills-ios-cricket-tab">
+                  <div class="row row-cols-1 row-cols-lg-3 g-2 g-lg-4" id="iosCricketCardsContainer">
+                    <!-- iOS Cricket cards will be inserted here -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="./src/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+
+    function getStatusClass(status) {
+      switch (status) {
+        case "Active":
+          return "text-success font-sm"; // Bootstrap class for green text
+        case "InActive":
+          return "text-dange font-sm"; // Bootstrap class for red text
+        default:
+          return "text-secondary font-sm"; // Default class for other statuses
+      }
+    }
+    const androidLogo = "./src/img/android.png";
+    const iosLogo = "./src/img/ios.png";
+    function populateCards(containerId, apps, appLogo) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = ""; // Clear existing content
+      apps.forEach((app) => {
+        const card = document.createElement("div");
+        card.className = " col g-2";
+        card.style.width = "";
+        // card.style.backgroundColor = "#0000000a";
+        card.innerHTML = `
+          <div class="card-body border rounded-2 d-flex justify-content-between align-items-center ">
+       <div class="d-flex align-items-center ">
+         <img src="${appLogo}" alt="" class="mr-3 border rounded-3" style="width:40px; height:40px; margin-right:10px">
+            <div>
+              <h5 class="card-title">${app.appName}</h5>
+              <h6 class="card-subtitle mb-2 ${getStatusClass(
+          app.status
+        )}">Status: ${app.status}</h6>
+            </div>
+        </div>
+            <a href="${app.appLink
+          }" class="btn border font-sm" target="_blank">Open</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function loadContent() {
+      // Populate all sections
+      populateCards(
+        "androidFootballCardsContainer",
+        jsonData.android.football,
+        androidLogo
+      );
+      populateCards(
+        "iosFootballCardsContainer",
+        jsonData.ios.football,
+        iosLogo
+      );
+      populateCards(
+        "androidCricketCardsContainer",
+        jsonData.android.cricket,
+        androidLogo
+      );
+      populateCards(
+        "iosCricketCardsContainer",
+        jsonData.ios.cricket,
+        iosLogo
+      );
+    }
+
+    // Load content when the page loads
+    document.addEventListener("DOMContentLoaded", loadContent);
+  </script>
+</body>
+
+</html>
